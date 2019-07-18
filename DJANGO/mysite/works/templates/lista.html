@@ -1,0 +1,33 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table class="table table-sm table-bordered table-striped text-center" style="margin-top: 10px">
+  <thead>
+    <tr>
+      <th scope="col">Titolo</th>
+      <th scope="col">Oggetto</th>
+      <th scope="col">Data</th>
+      <th scope="col">Importo</th>
+      <th scope="col">Categoria</th>
+    </tr>
+  </thead>
+
+{% if lavori_list %}
+    {% for lavori in lavori_list %}
+        <tr>
+          <td><a href="/lavori/{{ lavori.id }}/">{{ lavori.titolo }}</a></td>
+          <td>{{ lavori.oggetto }}</td>
+          <td>{{ lavori.data_lavoro }}</td>
+          <td>{{ lavori.importo }}</td>
+          <td><a href="/categorie/{{ lavori.id }}">{{ lavori.categoria }}</a></td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% else %}
+    <p>Nessun lavoro inserito!</p>
+{% endif %}
+
+{% endblock content%}

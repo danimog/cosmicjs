@@ -1,0 +1,40 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="text-center">
+    <h1>{{ lavoro.titolo }}</h1><br />
+    <h4>Oggetto: {{ lavoro.oggetto }}</h4>
+    <h4>Categoria: {{ lavoro.categoria }}</h4>
+    <h4>Data: {{ lavoro.data_lavoro }}</h4>
+    <h4>Importo: {{ lavoro.importo }}</h4>
+  </div>
+
+  <h2>Dettaglio lavori:</h2>
+  <table class="table table-sm table-bordered table-striped text-center">
+    <thead>
+      <tr>
+        <th scope="col">Descrizione</th>
+        <th scope="col">Data</th>
+        <th scope="col">Fase</th>
+        <th scope="col">Allegati</th>
+      </tr>
+    </thead>
+
+  {% for detail in dettaglio %}
+  <tr>
+    <td>{{detail.descrizione_dettaglio}}</td>
+    <td>{{detail.data_dettaglio}}</td>
+    <td>{{detail.fase_dettaglio}}</td>
+    <td>
+      {% for attach in allegato %}
+      <a href="{{ attach.foto_allegato }}"> A </a>
+      {% endfor %}
+    </td>
+  </tr>
+  {% endfor %}
+
+</table>
+
+{% endblock content%}
