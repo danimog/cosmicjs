@@ -30,7 +30,7 @@
     <td>
       {% for attach in allegato %}
         {% if attach.dettaglio_id == detail.id %}
-      <a href="{{ attach.foto_allegato }}"><i class="material-icons">camera_alt</i></a>
+      <a href="../../media/{{MEDIA_URL}}{{ attach.foto_allegato }}"><i class="material-icons">camera_alt</i></a>
       <a href="{{ attach.documento_allegato }}"><i class="material-icons">file_copy</i></a>
         {% endif %}
       {% endfor %}
