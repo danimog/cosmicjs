@@ -1,7 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.db.models import Q
 
-from .models import Allegati, Categoria, Dettaglio, Lavoro
+from .models import Allegato, Categoria, Dettaglio, Lavoro
 
 #def index(request):
 #    return HttpResponse("Hello, world. Benvenuto!")
@@ -15,7 +16,10 @@ def lavori(request, lavoro_id):
     try:
         lavoro = Lavoro.objects.get(pk=lavoro_id)
         dettaglio = Dettaglio.objects.filter(lavoro_dettaglio=lavoro)
-        allegato = Allegati.objects.all()
+        allegato = Allegato.objects.all()
+        #for d in dettaglio:
+        #    allegato = Allegato.objects.filter(dettaglio_id=d.id)
+
     except Lavoro.DoesNotExist:
         raise Http404("Question does not exist")
     return render(request, 'dettaglio.html', {'lavoro': lavoro, 'dettaglio': dettaglio, 'allegato': allegato})

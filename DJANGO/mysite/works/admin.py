@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import *
 
 class AllegatiInline(admin.StackedInline):
-    model = Allegati
+    model = Allegato
     extra = 1
 
 class DettaglioAdmin(admin.ModelAdmin):

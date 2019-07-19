@@ -51,7 +51,7 @@ class Dettaglio(models.Model):
         verbose_name_plural = "Dettagli"
 
 
-class Allegati(models.Model):
+class Allegato(models.Model):
     dettaglio = models.ForeignKey(Dettaglio, on_delete=models.CASCADE)
     foto_allegato = models.FileField(upload_to='upload/')
     documento_allegato = models.FileField(upload_to='upload/')
