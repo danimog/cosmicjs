@@ -1,2 +1,2 @@
-# cosmicjs
-# cosmicjs
+DJANGO Project 
+#Parco Intranet
