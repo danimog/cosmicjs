@@ -11,17 +11,40 @@
     <!-- Google Icons-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <style>
+      .footer-copyright {
+         background-color: teal;
+      }
+      .footer-copyright a,visited{
+        color: white;
+      }
+      .footer{
+//        position:fixed;
+        left:0;
+        bottom:0;
+        width:100%;
+        color:white;
+        text-align:center;
+      }
+      .footer a,visited{
+        color: white;
+      }
+    </style>
+
     <title>PN5T - Oggi siamo a lavorare</title>
   </head>
   <body>
-    <div class="container" style="margin: 10px auto">
 
+    {% load static %}
+    <div class="container" style="margin: 10px auto">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/lavori/">
-          {% load static %}
+
           <img src="{% static 'works/images/logo_parco.jpg' %}" width="120" height="120">
         <!--  PN5T.IT -->
         </a>
+        <img src="{% static 'works/images/emas.jpg' %}" width="64" height="">&nbsp;
+        <img src="{% static 'works/images/iso14000.jpg' %}" width="64" height="60">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -43,6 +66,47 @@
 
     </div>
 
+    <!-- Inizio FOOTER-->
+    <div class="footer bg-success font-weight-light">
+
+        <div class="container">
+          <div class="row py-4 d-flex align-items-center">
+
+            <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+              <h5 class="mb-0 font-weight-light">Parco Nazionale delle Cinque Terre</h5><br>
+              <h6 class="mb-0 font-weight-light">
+                Via Discovolo snc Manarola<br>
+                19017 Riomaggiore<br>
+                +39 0187 762600<br>
+                <a href="http://www.parconazionale5terre.it" target="_blank">www.parconazionale5terre.it</a>
+              </h6>
+            </div>
+            <div class="col-md-6 col-lg-7 text-center text-md-right">
+              <!-- Facebook -->
+              <a href="https://www.facebook.com/pages/Parco-Nazionale-delle-Cinque-Terre-Area-Marina-Protetta/239620382098" target="_blank">
+                <img src="{% static 'works/images/facebook_icon.png' %}" width="32" height="32">
+              </a>
+              <!-- Twitter -->
+              <a href="https://twitter.com/parco5terre" target="_blank">
+                <img src="{% static 'works/images/twitter_icon.png' %}" width="32" height="32">
+              </a>
+              <!--Instagram-->
+              <a href="https://www.instagram.com/parcocinqueterre/" target="_blank">
+                <img src="{% static 'works/images/instagram_icon.png' %}" width="32" height="32">
+              </a>
+            </div>
+          </div>
+        </div>
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center font-weight-light">
+          <small>© 2019 Copyright:<a href="http://www.danielemoggia.it"> Daniele Moggia</a></small>
+      </div>
+  <!-- Copyright -->
+    </div>
+
+
+    <!-- Footer -->
 
 
     <!-- Optional JavaScript -->

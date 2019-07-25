@@ -3,6 +3,7 @@
 
 {% block content %}
 
+
   <div class="text-center">
     <h1>{{ lavoro.titolo }}</h1><br />
     <h4>Oggetto: {{ lavoro.oggetto }}</h4>
@@ -30,14 +31,36 @@
     <td>
       {% for attach in allegato %}
         {% if attach.dettaglio_id == detail.id %}
-      <a href="../../media/{{MEDIA_URL}}{{ attach.foto_allegato }}"><i class="material-icons">camera_alt</i></a>
-      <a href="{{ attach.documento_allegato }}"><i class="material-icons">file_copy</i></a>
+      <!--a href="../../media/{{MEDIA_URL}}{{ attach.foto_allegato }}"><i class="material-icons">camera_alt</i></a-->
+      <a href="../../media/{{MEDIA_URL}}{{ attach.documento_allegato }}"><i class="material-icons">file_copy</i></a>
         {% endif %}
       {% endfor %}
     </td>
   </tr>
   {% endfor %}
-
 </table>
+<!--
+  {% for i in 0|rjust:5 %}
+    {{ forloop.counter }}
+  {% endfor %}
+-->
+<div id="carouselFoto" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      {% for pict in fotoallegate %}
+        <div class="carousel-item {% if forloop.first %} active{% endif %}">
+          <img class="d-block w-100" src="../../media/{{MEDIA_URL}}{{ pict }}" alt="slide">
+        </div>
+      {% endfor %}
+    </div>
+    <a class="carousel-control-prev" href="#carouselFoto" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Precedente</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselFoto" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Successivo</span>
+    </a>
+</div>
+
 
 {% endblock content%}
